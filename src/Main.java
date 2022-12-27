@@ -1,5 +1,3 @@
-import com.sun.jdi.ShortType;
-
 import java.util.Scanner;
 
 public class Main {
@@ -22,17 +20,12 @@ public class Main {
         } else {
             System.out.println("Если возраст человека равен " + age + " годам, то он не совершеннолетний");
         }
-        System.out.println("\nДругой варинат решения задание 1");
-        int age1 = 17;
-        if (age1 >= 18){
-            System.out.println("Если возраст человека равен " + age1 + " годам, то он совершеннолетний");
-        } else {
-            System.out.println("Если возраст человека равен " + age1 + " годам, то он не совершеннолетний");
-        }
     }
     public static void task2(){
         System.out.println("\nЗадание 2");
-        int degree = 4;
+        Scanner degreeNum = new Scanner(System.in);
+        System.out.println("Сколько градусов сейчас на улице?");
+        int degree = degreeNum.nextInt();
         if (degree >= 5){
             System.out.println("На улице " + degree + " градусов, можно идти без шапки");
         } else {
@@ -41,7 +34,9 @@ public class Main {
     }
     public static void task3() {
         System.out.println("\nЗадание 3");
-        int speed = 80;
+        Scanner speedNum = new Scanner(System.in);
+        System.out.println("С какой скоростью вы едите?");
+        int speed = speedNum.nextInt();
         if (speed >= 60){
             System.out.println("Если скорость равна " + speed + " км/ч, то придется заплатить штраф");
         } else {
@@ -50,7 +45,9 @@ public class Main {
     }
     public static void task4(){
         System.out.println("\nЗадание 4");
-        int age = 4;
+        Scanner ageNum = new Scanner(System.in);
+        System.out.println("Напишите возраст, который необходимо проверить");
+        int age = ageNum.nextInt();
         boolean kindergarten = 2 <= age && age <= 6;
         boolean school = 7 <= age && age < 18;
         boolean university = 18 <= age && age < 24;
@@ -70,14 +67,16 @@ public class Main {
     }
     public static void task5() {
         System.out.println("\nЗадание 5");
-        int age = 31;
+        Scanner ageNum = new Scanner(System.in);
+        System.out.println("Сколько вам лет, на аттракционах опасно поэтому необходимо проверить");
+        int age = ageNum.nextInt();
         boolean ban = age < 5;
-        boolean restricton = 5 <= age && age <= 14;
+        boolean controlled = 5 <= age && age <= 14;
         boolean free = 14 < age;
         if (ban) {
             System.out.println("Если возраст ребенка равен " + age + " годам, то ему нельзя кататься на аттракционе");
         }
-        if (restricton) {
+        if (controlled) {
             System.out.println("Если возраст человека равен " + age + " годам, то ему можно кататься на аттракционе в сопровождении");
         }
         if (free) {
@@ -88,7 +87,9 @@ public class Main {
         System.out.println("\nЗадание 6");
         int total = 102;
         int sit = 60;
-        int ticket = 112;
+        Scanner ticketNum = new Scanner(System.in);
+        System.out.println("Напишите какой вы в очереди за билетом");
+        int ticket = ticketNum.nextInt();
         boolean success = ticket > 0 && ticket <= total;
         boolean sitTicket = ticket > 0 && ticket <= sit;
         if (success) {
@@ -103,18 +104,24 @@ public class Main {
     }
     public static void task7() {
         System.out.println("\nЗадание 7");
-        int one = 3214;
-        int two = 5435;
-        int three = 3213;
+        Scanner oneNum = new Scanner(System.in);
+        System.out.println("Введите первое число: ");
+        int one = oneNum.nextInt();
+        Scanner twoNum = new Scanner(System.in);
+        System.out.println("Введите второе число: ");
+        int two = twoNum.nextInt();
+        Scanner threeNum = new Scanner(System.in);
+        System.out.println("Введите третье число: ");
+        int three = threeNum.nextInt();
         boolean first = one > two && one > three;
         boolean second = two > one && two > three;
         if (first) {
-            System.out.println(one);
+            System.out.println("Самое большее первое число равное " + one);
         } else {
             if (second){
-                System.out.println(two);
+                System.out.println("Самое большее второе число равное " + two);
             } else {
-                System.out.println(three);
+                System.out.println("Самое большее третье число равное " + three);
             }
         }
     }
